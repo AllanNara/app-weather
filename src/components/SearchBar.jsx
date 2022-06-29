@@ -15,7 +15,7 @@ export default function SearchBar({onSearch}) {
         <input
           type="text"
           placeholder="Ciudad..."
-          class="form-control mr-sm-2"
+          className="form-control mr-sm-2"
           value={ciudad}
           onChange={e => setCiudad(e.target.value)}
         />
