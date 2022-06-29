@@ -45,21 +45,13 @@ export default function App() {
         }
       });
   }
-  function onFilter(cityId) {
-    let city = cities.filter(c => c.id === parseInt(cityId));
-    if(city.length > 0) {
-        return city[0];
-    } else {
-        return null;
-    }
-  }
 
   return (
     <div>
       <Nav onSearch={onSearch} />
       <Routes>
         <Route path="/about" element={<About />} />
-        <Route path="/city/:cityId" element={({match}) => <City city={onFilter(match.params.cityId)} />} />
+        <Route path="/city/:cityId" element={<City cities={cities} />} />
         <Route path="/" element={<Cards cities={cities} onClose={onClose} />} />
       </Routes>
     </div>
